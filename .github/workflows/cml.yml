@@ -35,10 +35,11 @@ jobs:
           git fetch --prune --unshallow
           dvc metrics diff --show-md --no-path main >> report.md
           cml-send-comment report.md
-          
+
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
+          git add report.md
           git add dvc.lock
           git add loss.csv metrics.json
           git commit -m "CML commit"
