@@ -43,7 +43,7 @@ jobs:
           git config --local user.name "GitHub Action"
 
           git add dvc.lock
-          git add lock loss.csv metrics.json
+          git add loss.csv metrics.json
           git commit -m "CML commit"
 
           git push 
