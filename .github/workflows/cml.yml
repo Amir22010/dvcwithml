@@ -34,8 +34,11 @@ jobs:
           # Use DVC metrics diff to compare metrics to main
           git fetch --prune --unshallow
           dvc metrics diff --show-md --no-path main >> report.md
-          cml-send-comment report.md
-
+          
+          # Add figure to report
+          dvc plots diff --target loss.csv --show-vega main > vega.json
+          vl2png vega.json -s 1.3 | cml-publish --md >> report.md
+          cml-send-comment report.md 
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
@@ -43,8 +46,5 @@ jobs:
           git add loss.csv metrics.json
           git commit -m "CML commit"
 
-          git push
+          git push 
           dvc push
-          git add report.md
-          git commit -m "CML Report"
-          git push
