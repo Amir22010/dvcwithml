@@ -4,8 +4,8 @@ stages:
     cmd: python train.py
     deps:
     - path: data
-      md5: 767e77233797a854a3f5ec3cfc55bac2.dir
-      size: 52101673
+      md5: 010fc751b06ee5d3204cb536ac88212c.dir
+      size: 52101153
       nfiles: 4
     - path: train.py
       md5: ba6a1e12f8e450417f5807f8e3e158c9
@@ -15,5 +15,5 @@ stages:
       md5: d86d4e83fafb4cfaa1e2a1a36d461bbe
       size: 588
     - path: metrics.json
-      md5: 53ab99f776edf3cdd442758859897a53
+      md5: b32af7712b4451d38454a2d38addce6d
       size: 95
